@@ -1,17 +1,29 @@
-<html lang="en" ng-app="videogameModule">
+<html lang="en" ng-app="clienteModule">
 
 <head>
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
 	<title>Video Game</title>
 </head>
 
-<body ng-controller="videogameControl">
+<body ng-controller="clienteControl">
+
 	<script src="js/jquery-3.3.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/angular.js"></script>
 	<script src="control/clienteControl.js"></script>
-	<div ng-include src="'menu.html'"></div>
+
+	<div ng-include src="menu.html"></div>
+
+
 
 	<div class="card border-secondary mb-3">
 		<div class="card-header">Cadastro de Jogos</div>
@@ -43,8 +55,8 @@
 
 				<div class="col-md-4 mb-3">
 					<label for="txtNomeVideoGame">Nome do Console </label>
-					<input type="text" ng-model="videogame.nome" class="form-control is-valid" id="txtNomeVideoGame"
-						required>
+					<input type="text" ng-model="videogame.nomevideogame" class="form-control is-valid"
+						id="txtNomeVideoGame" required>
 					<div class="invalid-feedback">
 						Digite o nome Video Game.
 					</div>
@@ -72,7 +84,7 @@
 				<div class="col-md-2 mb-2">
 					<label for="txtAnoLancamento">Ano em que foi mais jogado</label>
 					<input type="text" ng-model="videogame.anolancamento" class="form-control is-valid"
-						id="AnoLancamento" required>
+						id="txtAnoLancamento" required>
 					<div class="invalid-feedback">
 						Digite o Ano
 					</div>
@@ -120,8 +132,6 @@
 							<th>Jogabilidade</th>
 							<th>Notas</th>
 							<th>Pior Jogo</th>
-							
-							
 
 						</tr>
 					</thead>
@@ -129,10 +139,10 @@
 						<tr ng-repeat="videogameTabela in videogames | filter:criterio"
 							ng-click="seleciona(videogameTabela)">
 							<td>{{videogameTabela.codigo}}</td>
-							<td>{{videogameTabela.nomeVideoGame}}</td>
+							<td>{{videogameTabela.nomevideogame}}</td>
 							<td>{{clienteTabela.nomejogo}}</td>
 							<td>{{clienteTabela.categoria}}</td>
-							<td>{{clienteTabela.anoLancamento}}</td>
+							<td>{{clienteTabela.anolancamento}}</td>
 							<td>{{clienteTabela.jogabilidade}}</td>
 							<td>{{clienteTabela.notas}}</td>
 							<td>{{clienteTabela.piorjogo}}</td>
@@ -145,6 +155,15 @@
 					n&atilde;o temos o que voc&ecirc; est&aacute; procurando neste momento!!</span>
 
 
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+					crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+					integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+					crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+					integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+					crossorigin="anonymous"></script>
 </body>
 
 </html>
