@@ -54,7 +54,7 @@
   
           <div class="col-md-4 mb-3">
             <label for="txtNomeVideoGame">Nome do Console </label>
-            <input type="text" ng-model="videogame.nomevideogame" class="form-control is-valid"
+            <input type="text" ng-model="videogame.nomeVideogame" class="form-control is-valid"
               id="txtNomeVideoGame" required>
             <div class="invalid-feedback">
               Digite o nome Video Game.
@@ -63,7 +63,7 @@
   
           <div class="col-md-4 mb-3">
             <label for="txtNomeJogo">Nome do Melhor Jogo </label>
-            <input type="text" ng-model="videogame.nomejogo" class="form-control is-valid" id="txtNomeJogo"
+            <input type="text" ng-model="videogame.nomeJogo" class="form-control is-valid" id="txtNomeJogo"
               required>
             <div class="invalid-feedback">
               Digite o nome do jogo.
@@ -82,7 +82,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtAnoLancamento">Ano em que foi mais jogado</label>
-            <input type="text" ng-model="videogame.anolancamento" class="form-control is-valid"
+            <input type="text" ng-model="videogame.anoLancamento" class="form-control is-valid"
               id="txtAnoLancamento" required>
             <div class="invalid-feedback">
               Digite o Ano
@@ -108,7 +108,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtPiorJogo"> Pior Jogo </label>
-            <input type="text" ng-model="videogame.piorjogo" class="form-control is-valid" id="txtPiorJogo"
+            <input type="text" ng-model="videogame.piorJogo" class="form-control is-valid" id="txtPiorJogo"
               required>
             <div class="invalid-feedback">
               Digite o pior jogo
@@ -138,13 +138,13 @@
                 <tr ng-repeat="videogameTabela in videogames | filter:criterio"
                 ng-click="seleciona(videogameTabela)">
                 <td>{{videogameTabela.codigo}}</td>
-                <td>{{videogameTabela.nomevideogame}}</td>
-                <td>{{clienteTabela.nomejogo}}</td>
-                <td>{{clienteTabela.categoria}}</td>
-                <td>{{clienteTabela.anolancamento}}</td>
-                <td>{{clienteTabela.jogabilidade}}</td>
-                <td>{{clienteTabela.notas}}</td>
-                <td>{{clienteTabela.piorjogo}}</td>
+                <td>{{videogameTabela.nomeVideogame}}</td>
+                <td>{{videogameTabela.nomeJogo}}</td>
+                <td>{{videogameTabela.categoria}}</td>
+                <td>{{videogameTabela.anoLancamento}}</td>
+                <td>{{videogameTabela.jogabilidade}}</td>
+                <td>{{videogameTabela.notas}}</td>
+                <td>{{videogameTabela.piorJogo}}</td>
   
   
               </tr>

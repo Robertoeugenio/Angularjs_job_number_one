@@ -50,12 +50,12 @@
       <form class="was-validated form-row">
         <div class="col-md-1 mb-3">
           <label for="txtCodigo">C&oacute;digo</label>
-          <input type="text" ng-model="serieantiga.codigo" class="form-control" disabled id="txtCodigo">
+          <input type="text" ng-model="serieAntiga.codigo" class="form-control" disabled id="txtCodigo">
         </div>
 
         <div class="col-md-4 mb-3">
           <label for="txtNomeSerie">Nome da Série</label>
-          <input type="text" ng-model="serieantiga.nomeserie" class="form-control is-valid" id="txtNomeSerie" required>
+          <input type="text" ng-model="serieAntiga.nomeSerie" class="form-control is-valid" id="txtNomeSerie" required>
           <div class="invalid-feedback">
             Digite o nome da série.
           </div>
@@ -63,14 +63,14 @@
 
         <div class="col-md-4 mb-3">
           <label for="txtCategoria">Categoria</label>
-          <input type="text" ng-model="serieantiga.categoria" class="form-control is-valid" id="txtCategoria" required>
+          <input type="text" ng-model="serieAntiga.categoria" class="form-control is-valid" id="txtCategoria" required>
           <div class="invalid-feedback">
             Digite categoria
           </div>
         </div>
         <div class="col-md-2 mb-2">
             <label for="txtExibido">Ano de Exibição</label>
-            <input type="text" ng-model="serieantiga.exibido" class="form-control is-valid"
+            <input type="text" ng-model="serieAntiga.exibido" class="form-control is-valid"
               id="txtExibido" required>
             <div class="invalid-feedback">
               Digite o Ano 
@@ -78,9 +78,9 @@
           </div>
   
           <div class="col-md-3 mb-3">
-            <label for="txtGostava">O que você mais gostava </label>
-            <input type="text" ng-model="serieantiga.gostava" class="form-control is-valid"
-              id="txtGostava" required>
+            <label for="txtPreferido">O que você mais gostava </label>
+            <input type="text" ng-model="serieAntiga.gostava" class="form-control is-valid"
+              id="txtPreferido" required>
             <div class="invalid-feedback">
               Digite um motivo
             </div>
@@ -88,7 +88,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtNotas">Notas </label>
-            <input type="text" ng-model="serieantiga.notas" class="form-control is-valid" id="txtNotas" required>
+            <input type="text" ng-model="serieAntiga.notas" class="form-control is-valid" id="txtNotas" required>
             <div class="invalid-feedback">
               Digite entre cinco e dez
             </div>
@@ -96,7 +96,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtPiorSerie"> Pior Série </label>
-            <input type="text" ng-model="serieantiga.piorserie" class="form-control is-valid" id="txtPiorSerie"
+            <input type="text" ng-model="serieAntiga.piorSerie" class="form-control is-valid" id="txtPiorSerie"
               required>
             <div class="invalid-feedback">
               Digite o pior jogo
@@ -125,12 +125,12 @@
               <tr ng-repeat="serieantigaTabela in videogames | filter:criterio"
                 ng-click="seleciona(serieantigaTabela)">
                 <td>{{serieantigaTabela.codigo}}</td>
-                <td>{{serieantigaTabela.nomeserie}}</td>
+                <td>{{serieantigaTabela.nomeSerie}}</td>
                 <td>{{serieantigaTabela.categoria}}</td>
                 <td>{{serieantigaTabela.exibido}}</td>
-                <td>{{serieantigaTabela.gostava}}</td>
+                <td>{{serieantigaTabela.preferido}}</td>
                 <td>{{serieantigaTabela.notas}}</td>
-                <td>{{serieantigaTabela.piorserie}}</td>
+                <td>{{serieantigaTabela.piorSerie}}</td>
   
   
               </tr>

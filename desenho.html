@@ -50,12 +50,12 @@
       <form class="was-validated form-row">
           <div class="col-md-1 mb-3">
             <label for="txtCodigo">C&oacute;digo</label>
-            <input type="text" ng-model="desenhoanimado.codigo" class="form-control" disabled id="txtCodigo">
+            <input type="text" ng-model="desenhoAnimado.codigo" class="form-control" disabled id="txtCodigo">
           </div>
   
           <div class="col-md-4 mb-3">
             <label for="txtNomeDesenho">Nome do Desenho </label>
-            <input type="text" ng-model="desenhoanimado.nomedesenho" class="form-control is-valid"
+            <input type="text" ng-model="desenhoAnimado.nomeDesenho" class="form-control is-valid"
               id="txtNomeDesenho" required>
             <div class="invalid-feedback">
               Digite o nome do desenho animado.
@@ -64,7 +64,7 @@
   
           <div class="col-md-4 mb-3">
             <label for="txtCategoria">Categoria </label>
-            <input type="text" ng-model="desenhoanimado.categoria" class="form-control is-valid" id="txtCategoria"
+            <input type="text" ng-model="desenhoAnimado.categoria" class="form-control is-valid" id="txtCategoria"
               required>
             <div class="invalid-feedback">
               Digite a Categoria
@@ -73,7 +73,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtExibido">Ano de Exibição</label>
-            <input type="text" ng-model="desenhoanimado.exibido" class="form-control is-valid"
+            <input type="text" ng-model="desenhoAnimado.exibido" class="form-control is-valid"
               id="txtExibido" required>
             <div class="invalid-feedback">
               Digite ano de Exibição
@@ -82,7 +82,7 @@
   
           <div class="col-md-3 mb-3">
             <label for="txtEpisodio">Melhor Episódio</label>
-            <input type="text" ng-model="desenhoanimado.episodio" class="form-control is-valid"
+            <input type="text" ng-model="desenhoAnimado.episodio" class="form-control is-valid"
               id="txtEpisodio" required>
             <div class="invalid-feedback">
               Digite o melhor episódio
@@ -91,7 +91,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtNotas">Notas </label>
-            <input type="text" ng-model="desenhoanimado.notas" class="form-control is-valid" id="txtNotas" required>
+            <input type="text" ng-model="desenhoAnimado.notas" class="form-control is-valid" id="txtNotas" required>
             <div class="invalid-feedback">
               Digite entre cinco e dez
             </div>
@@ -99,7 +99,7 @@
   
           <div class="col-md-2 mb-2">
             <label for="txtPiorDesenho"> Pior Desenho </label>
-            <input type="text" ng-model="desenhoanimado.piorDesenho" class="form-control is-valid" id="txtPiorDesenho"
+            <input type="text" ng-model="desenhoAnimado.piorDesenho" class="form-control is-valid" id="txtPiorDesenho"
               required>
             <div class="invalid-feedback">
               Digite o pior Desenho
@@ -120,7 +120,7 @@
                 <th>Exibição</th>
                 <th>Melhor Episódio</th>
                 <th>Notas</th>
-                <th>Pior Jogo</th>
+                <th>Pior Desenho</th>
   
               </tr>
             </thead>
@@ -128,12 +128,12 @@
               <tr ng-repeat="desenhoanimadoTabela in desenhoanimados | filter:criterio"
                 ng-click="seleciona(desenhoanimadoTabela)">
                 <td>{{desenhoanimadoTabela.codigo}}</td>
-                <td>{{desenhoanimadoTabela.nomedesenho}}</td>
+                <td>{{desenhoanimadoTabela.nomeDesenho}}</td>
                 <td>{{desenhoanimadoTabela.categoria}}</td>
                 <td>{{desenhoanimadoTabela.exibido}}</td>
                 <td>{{desenhoanimadoTabela.episodio}}</td>
                 <td>{{desenhoanimadoTabela.notas}}</td>
-                <td>{{desenhoanimadoTabela.piorjogo}}</td>
+                <td>{{desenhoanimadoTabela.piorDesenho}}</td>
   
   
               </tr>
