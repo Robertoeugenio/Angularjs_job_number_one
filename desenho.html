@@ -10,7 +10,7 @@
   <!-- Bootstrap  -->
   <link rel="stylesheet" href="css/bootstrap.css">
 
-  <title> Série Antiga  </title>
+  <title> Desenho  </title>
 </head>
 
 <body ng-controller="clienteControl">
@@ -25,12 +25,12 @@
   <div ng-include src="'menu.html'"></div>
 
   <div class="card border-secondary mb-3">
-    <div class="card-header"> Cadastro de Séries Antigas</div>
+    <div class="card-header"> Cadastro de Desenho</div>
   </div>
   <ul class="nav nav-tabs" id="clienteTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="cadastro-tab" data-toggle="tab" href="#cadastro" role="tab"
-        aria-controls="tabCadastro" aria-selected="true">Cadastro de Séries</a>
+        aria-controls="tabCadastro" aria-selected="true">Cadastro de Desenho</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="dados-tab" data-toggle="tab" href="#dados" role="tab" aria-controls="tabDados"
@@ -48,58 +48,61 @@
       <br> <br>
 
       <form class="was-validated form-row">
-        <div class="col-md-1 mb-3">
-          <label for="txtCodigo">C&oacute;digo</label>
-          <input type="text" ng-model="serieantiga.codigo" class="form-control" disabled id="txtCodigo">
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label for="txtNomeSerie">Nome da Série</label>
-          <input type="text" ng-model="serieantiga.nomeserie" class="form-control is-valid" id="txtNomeSerie" required>
-          <div class="invalid-feedback">
-            Digite o nome da série.
+          <div class="col-md-1 mb-3">
+            <label for="txtCodigo">C&oacute;digo</label>
+            <input type="text" ng-model="desenhoanimado.codigo" class="form-control" disabled id="txtCodigo">
           </div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label for="txtCategoria">Categoria</label>
-          <input type="text" ng-model="serieantiga.categoria" class="form-control is-valid" id="txtCategoria" required>
-          <div class="invalid-feedback">
-            Digite categoria
+  
+          <div class="col-md-4 mb-3">
+            <label for="txtNomeDesenho">Nome do Desenho </label>
+            <input type="text" ng-model="desenhoanimado.nomedesenho" class="form-control is-valid"
+              id="txtNomeDesenho" required>
+            <div class="invalid-feedback">
+              Digite o nome do desenho animado.
+            </div>
           </div>
-        </div>
-        <div class="col-md-2 mb-2">
+  
+          <div class="col-md-4 mb-3">
+            <label for="txtCategoria">Categoria </label>
+            <input type="text" ng-model="desenhoanimado.categoria" class="form-control is-valid" id="txtCategoria"
+              required>
+            <div class="invalid-feedback">
+              Digite a Categoria
+            </div>
+          </div>
+  
+          <div class="col-md-2 mb-2">
             <label for="txtExibido">Ano de Exibição</label>
-            <input type="text" ng-model="serieantiga.exibido" class="form-control is-valid"
+            <input type="text" ng-model="desenhoanimado.exibido" class="form-control is-valid"
               id="txtExibido" required>
             <div class="invalid-feedback">
-              Digite o Ano 
+              Digite ano de Exibição
             </div>
           </div>
   
           <div class="col-md-3 mb-3">
-            <label for="txtGostava">O que você mais gostava </label>
-            <input type="text" ng-model="serieantiga.gostava" class="form-control is-valid"
-              id="txtGostava" required>
+            <label for="txtEpisodio">Melhor Episódio</label>
+            <input type="text" ng-model="desenhoanimado.episodio" class="form-control is-valid"
+              id="txtEpisodio" required>
             <div class="invalid-feedback">
-              Digite um motivo
+              Digite o melhor episódio
             </div>
           </div>
   
           <div class="col-md-2 mb-2">
             <label for="txtNotas">Notas </label>
-            <input type="text" ng-model="serieantiga.notas" class="form-control is-valid" id="txtNotas" required>
+            <input type="text" ng-model="desenhoanimado.notas" class="form-control is-valid" id="txtNotas" required>
             <div class="invalid-feedback">
               Digite entre cinco e dez
             </div>
           </div>
   
           <div class="col-md-2 mb-2">
-            <label for="txtPiorSerie"> Pior Série </label>
-            <input type="text" ng-model="serieantiga.piorserie" class="form-control is-valid" id="txtPiorSerie"
+            <label for="txtPiorDesenho"> Pior Desenho </label>
+            <input type="text" ng-model="desenhoanimado.piorDesenho" class="form-control is-valid" id="txtPiorDesenho"
               required>
             <div class="invalid-feedback">
-              Digite o pior jogo
+              Digite o pior Desenho
             </div>
           </div>
         </form>
@@ -112,31 +115,31 @@
             <thead>
               <tr>
                 <th>C&oacute;digo</th>
-                <th>Nome da Série </th>
+                <th>Nome do Desenho</th>
                 <th>Categoria</th>
-                <th>Ano de Exibição</th>
-                <th>O Que Você Mais gostava</th>
+                <th>Exibição</th>
+                <th>Melhor Episódio</th>
                 <th>Notas</th>
-                <th>Pior Série</th>
+                <th>Pior Jogo</th>
   
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="serieantigaTabela in videogames | filter:criterio"
-                ng-click="seleciona(serieantigaTabela)">
-                <td>{{serieantigaTabela.codigo}}</td>
-                <td>{{serieantigaTabela.nomeserie}}</td>
-                <td>{{serieantigaTabela.categoria}}</td>
-                <td>{{serieantigaTabela.exibido}}</td>
-                <td>{{serieantigaTabela.gostava}}</td>
-                <td>{{serieantigaTabela.notas}}</td>
-                <td>{{serieantigaTabela.piorserie}}</td>
+              <tr ng-repeat="desenhoanimadoTabela in desenhoanimados | filter:criterio"
+                ng-click="seleciona(desenhoanimadoTabela)">
+                <td>{{desenhoanimadoTabela.codigo}}</td>
+                <td>{{desenhoanimadoTabela.nomedesenho}}</td>
+                <td>{{desenhoanimadoTabela.categoria}}</td>
+                <td>{{desenhoanimadoTabela.exibido}}</td>
+                <td>{{desenhoanimadoTabela.episodio}}</td>
+                <td>{{desenhoanimadoTabela.notas}}</td>
+                <td>{{desenhoanimadoTabela.piorjogo}}</td>
   
   
               </tr>
             </tbody>
           </table>
-          <span ng-show="(serieantigas | filter: criterio).length == 0">Infelizmente
+          <span ng-show="(desenhos | filter: criterio).length == 0">Infelizmente
             n&atilde;o temos o que voc&ecirc; est&aacute; procurando neste momento!!</span>
   
   
